@@ -5,10 +5,14 @@ html{
     font-size: 50px;
     font-weight: bold;
 }
-img{
+.profpic{
     filter:grayscale(100%);
     max-width: 30px;
     max-height: 300px;
+}
+.profpic:hover{
+    filter:grayscale(0%);
+    
 }
 .home{
 
@@ -18,5 +22,32 @@ img{
 }
 .about{
     min-height: 100vh;
-    padding-top: 200px;
+    padding:200px 0;
+}
+.projects{
+    padding:200px 0;
+    min-height: 100vh;
+}
+.contacts{
+    padding:200px 0;
+    min-height: 100vh;
+    max-width: 75vh;  
+    margin: auto;
+    
+    
+    
+}
+.container_box{
+    
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10%;
+}
+.proj_img{
+    filter:grayscale(100%)
+}
+
+.proj_img:hover{
+    filter: grayscale(0%);
 }
