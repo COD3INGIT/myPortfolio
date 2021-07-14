@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -35,7 +38,7 @@
                             <a class="nav-link  " href="#proj_section">Projects</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link  " href="#">Contact</a>
+                            <a class="nav-link  " href="#cntct_section">Contact</a>
                         </li>
                         
                       </ul>
@@ -52,16 +55,16 @@
         <div class="container pt-5 ">
             <div class="row align-items-center">
                 <div class="col">
-                    <h6>Hi,my name is</h6>
+                    <h6>Hi, my name is</h6>
                     <div class="banner_name">
                         <p>Arjun.<br>
                         I build things for the web.</p>
                     </div>
                     <p class="pt-2 text-muted">I'm a web developer based out of Kochi, specialising in designing and building high scalable web apps. </p>
                     <div class="social_container pt-5">
-                    <i class="fa fa-github pr-5" style="font-size:36px"></i>
-                    <i class="fa fa-linkedin pr-5" style="font-size:36px"></i>
-                    <i class="fa fa-instagram pr-5" style="font-size:36px"></i>
+                    <a href="https://github.com/COD3INGIT"><i class="fa fa-github pr-5" style="font-size:36px"></i></a>
+                    <a href="https://www.linkedin.com/in/arjun-k-s-68233b18b/"><i class="fa fa-linkedin pr-5" style="font-size:36px"></i></a>
+                   <a href="https://www.instagram.com/"><i class="fa fa-instagram pr-5" style="font-size:36px"></i></a>
                     </div>
                 </div>                      
             </div>
@@ -70,27 +73,28 @@
     <section class="about" id="abt_section">
         
         <div class="container">
-            <h3>About me </h3>
-            <div class="row align-items-center">
+            <h3 class="section_Head">About me</h3>
+            <div class="row align-items-center pt-4">
             
                 <div class="col-md-6  text-muted ">
                     
-                    <p> My name is Arjun,I'm a Software Engineer / Fullstack web developer based out of Kochi. I design and build highly scalable back ends with a niche on user interfaces. 
+                    <p> My name is Arjun, I'm a Software Engineer / Fullstack web developer based out of Kochi. I design and build highly scalable back ends with a niche on user interfaces. 
                         
                     </p>
                     <p>Following are few technologies I've been working with:</p>
-                    <ul>
+                    <ul class="tech_List">
                         <li>Node.js</li>
                         <li>MongoDB</li>
                         <li>React</li>
                         <li>JavaScript</li>
                         <li>Html & CSS</li>
+                        <li>Bootstrap</li>
                         
                     </ul>
 
                 </div>
-                <div class="col-md-6">
-                <img class="img-fluid  rounded-circle profpic " src="img/ProfilePic.jpg">
+                <div class="col-md-6 d-flex justify-content-md-end" >
+                <a href="https://github.com/COD3INGIT"><img class="img-fluid  rounded-circle profpic " src="img/ProfilePic.jpg"></a>
                 </div>
             </div>
         </div>
@@ -128,6 +132,7 @@
         <div class="container_box">
       <div class="container ">
         <div class="row">
+
             <div class="col ">
         <form>
             <h3 class="text-center" >Get in touch</h3>
@@ -137,8 +142,8 @@
               </div>
 
             <div class="form-group">
-              <label for="inputEmail1"></label>
-              <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              <label for="inputEmail"></label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">

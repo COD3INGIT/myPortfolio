@@ -1,10 +1,21 @@
 html{
   scroll-behavior: smooth;
 }
+body{
+   background-color:  #fffaf0;
+   background-color: #f9f9f9;
+}
 .banner_name{
     font-size: 50px;
     font-weight: bold;
 }
+.social_container  a{
+    color:#212529;
+}
+.social_container  a:visited{
+    color:#212529;
+}
+
 .profpic{
     filter:grayscale(100%);
     max-width: 30px;
@@ -39,9 +50,10 @@ html{
 }
 .container_box{
     
-    border: 1px solid;
+   
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10%;
 }
 .proj_img{
@@ -50,4 +62,14 @@ html{
 
 .proj_img:hover{
     filter: grayscale(0%);
+}
+.section_Head {
+    
+        
+
+}
+.tech_List li{
+   font-family: 'Montserrat', sans-serif;
+   margin-top: 10px;
+   
 }
