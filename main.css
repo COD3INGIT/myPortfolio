@@ -1,0 +1,22 @@
+html{
+  scroll-behavior: smooth;
+}
+.banner_name{
+    font-size: 50px;
+    font-weight: bold;
+}
+img{
+    filter:grayscale(100%);
+    max-width: 30px;
+    max-height: 300px;
+}
+.home{
+
+    min-height: 100vh;
+    padding:200px 0;
+  
+}
+.about{
+    min-height: 100vh;
+    padding-top: 200px;
+}
