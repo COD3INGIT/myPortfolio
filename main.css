@@ -47,6 +47,7 @@ body{
     
     
     
+    
 }
 .container_box{
     
@@ -63,13 +64,21 @@ body{
 .proj_img:hover{
     filter: grayscale(0%);
 }
-.section_Head {
-    
-        
 
-}
 .tech_List li{
    font-family: 'Montserrat', sans-serif;
    margin-top: 10px;
    
+}
+.form-group input{
+    margin-bottom: 4px;
+}
+  .invalid{
+    border: 1px solid red;
+}
+.error-hint{
+    color: red;
+}
+.hidden{
+    display: none;
 }
