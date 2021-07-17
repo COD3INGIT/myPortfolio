@@ -15,13 +15,14 @@
 </head>
 <body>
     <header class="fixed-top text-white" style="background-color:#F0F0F0" > 
+      
         <div class="row">
-            <div class="col-md-6 col-8 text-dark p-3 pl-5  ">
+            <div class="col-md-6 col-4 text-dark p-3 pl-5  ">
                 <h2>@rjun</h2>
             </div>
             
 
-            <div class="col-md-6 col-4 my-auto ">
+            <div class="col-md-6 col-8 my-auto ">
                 <nav class="navbar navbar-expand-lg navbar-light ml-auto  align-items-center  ">                  
                     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -49,6 +50,7 @@
             </div>
 
         </div>
+ 
 
     </header>
     <section class="home" id="home_section">
@@ -131,19 +133,19 @@
             <h3 class="text-center" >Get In Touch</h3>
             <div class="form-group">
                 <label for="inputName"></label>
-                <input type="text"  name="name" id="inputName" class="form-control" placeholder="Name">                
+                <input type="text"  name="name" id="inputName" class="form-control" placeholder="Name" onkeyup="return validateName();" >                
                 <p class="error-hint" id="name_Err"> </p>
             </div>
 
             <div class="form-group">
               <label for="inputEmail"></label>
-              <input   name="email"class="form-control " id="inputEmail" aria-describedby="emailHelp" placeholder="Email"onkeyup="return validateEmail()" > 
-              <p class="error-hint" id="email_Err"> </p>
+              <input   name="email"class="form-control " id="inputEmail" aria-describedby="emailHelp" placeholder="Email" onkeyup="return validateEmail();" > 
+              <span class="error-hint" id="email_Err"> </span>
             </div>
             <div class="form-group">
-                <label for="contactNumber"></label>
-                <input type="tel" name="contact" class="form-control" id="contactNumber" placeholder="Contact No." >
-                <p class="error-hint"></p>
+                <label for="inputContact"></label>
+                <input type="tel" name="contact" class="form-control" id="inputContact" placeholder="Contact No." onkeyup="return validateContact();" >
+                <p class="error-hint" id="contact_Err"></p>
             </div>
               <div class="form-group">
                 <label for="commentInput"></label>
@@ -155,7 +157,7 @@
             
             
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="return submitForm();">Submit</button>
           </form>
         </div>
         </div>
