@@ -57,18 +57,23 @@ function validateContact(){
     validate.contact=false;
   }
 }
-/*function submitForm()
+function validateForm()
 {
-    if (validate.name == true && validate.email== true && validate.mobile ==true)
+    if (validate.name== false)
     {
-        nameError.innerHTML="";
-        emailError.innerHTML="";
-        mobileError.innerHTML="";
-        return;
+      nameError.innerHTML="required";
+      return false;
     }
-    else{
-        nameError.innerHTML="required";
-        emailError.innerHTML="adf";
-        mobileError.innerHTML=" adsfa";
+    else if(validate.email==false) {
+      emailError.innerHTML="*required";
+
     }
-}*/
+    else if(validate.contact==false)
+    {
+      mobileError.innerHTML="*required";
+    }
+    else
+    {
+      return true;
+    }
+}
