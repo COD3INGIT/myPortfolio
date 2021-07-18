@@ -2,18 +2,18 @@ const validate={
     name:false,
     place:false,
     email:false,
-    mobile:false
+    contact:false
 }
   
 function validateName(){
-    var name=document.getElementById("inputName").value
-    var nameError=document.getElementById("name_Err")
-    var elementAlp=/^[a-zA-Z]+(\s+[-a-zA-Z-()]+)*$/;
+    var name=document.getElementById("inputName").value;
+    var nameError=document.getElementById("name_Err");
+    var nameRegx=/^[a-zA-Z]+(\s+[-a-zA-Z-()]+)*$/;
 
   if(name==null || name.length <1){
     validate.name=false;
     nameError.innerHTML="*required";
-  }else if(name.match(elementAlp)){
+  }else if(name.match(nameRegx)){
     nameError.innerHTML="";
     validate.name=true;
   }else{
@@ -23,32 +23,16 @@ function validateName(){
 
 }
 
-/*function validateplace(){
-    var place=document.getElementById("place").value
-    var placeError=document.getElementById('place-Error')
-    var elementAlpa=/^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/
-
-  if(place==null || place==""){
-    validate.place=false;
-    placeError.innerHTML="*Field cannot be Empty*";
-  }else if(place.match(elementAlpa)){
-    placeError.innerHTML="";
-    validate.place=true;
-  }else{
-    placeError.innerHTML="*Enter alphabet only*";
-    validate.place=false;
-  }
-}*/
 
 function validateEmail(){
-    var email=document.getElementById("inputEmail").value
-    var emailError=document.getElementById("email_Err")
-    var elementemail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var email=document.getElementById("inputEmail").value;
+    var emailError=document.getElementById("email_Err");
+    var emailRegx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if(email==null || email==""){
     validate.email=false;
     emailError.innerHTML="*required";
-  }else if(email.match(elementemail)){
+  }else if(email.match(emailRegx)){
     emailError.innerHTML="";
     validate.email=true;
   }else{
@@ -58,22 +42,22 @@ function validateEmail(){
 }
 
 function validateContact(){
-    var mobile=document.getElementById("inputContact").value
-    var mobileError=document.getElementById("contact_Err")
-    var elementmobile=/^\d{10}$/
+    var contact=document.getElementById("inputContact").value;
+    var mobileError=document.getElementById("contact_Err");
+    var contactRegx=/^\d{10}$/
 
-  if(mobile==null || mobile==""){
-    validate.mobile=false;
+  if(contact==null || contact==""){
+    validate.contact=false;
     mobileError.innerHTML="*required";
-  }else if(mobile.match(elementmobile)){
+  }else if(mobile.match(contactRegx)){
     mobileError.innerHTML="";
-    validate.mobile=true;
+    validate.contact=true;
   }else{
     mobileError.innerHTML="*invalid";
-    validate.mobile=false;
+    validate.contact=false;
   }
 }
-function submitForm()
+/*function submitForm()
 {
     if (validate.name == true && validate.email== true && validate.mobile ==true)
     {
@@ -87,4 +71,4 @@ function submitForm()
         emailError.innerHTML="adf";
         mobileError.innerHTML=" adsfa";
     }
-}
+}*/
