@@ -27,7 +27,7 @@ body{
 .profpic{
     filter:grayscale(100%);
     max-width: 10px;
-    max-height: 500px;
+    max-height: 400px;
 }
 .profpic:hover{
     filter:grayscale(0%);
@@ -44,7 +44,10 @@ body{
     padding:200px 0;
    
 }
-
+.services{
+    padding:200px 0;
+    min-height: 100vh;
+}
 
 .projects{
     padding:200px 0;

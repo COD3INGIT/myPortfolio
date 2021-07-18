@@ -17,7 +17,7 @@ function validateName(){
     nameError.innerHTML="";
     validate.name=true;
   }else{
-    nameError.innerHTML="*Invalid";
+    nameError.innerHTML="*invalid";
     validate.name=false;
   }
 
@@ -36,7 +36,7 @@ function validateEmail(){
     emailError.innerHTML="";
     validate.email=true;
   }else{
-    emailError.innerHTML="*Invalid";
+    emailError.innerHTML="*invalid";
     validate.email=false;
   }
 }
@@ -57,23 +57,23 @@ function validateContact(){
     validate.contact=false;
   }
 }
-function validateForm()
-{
-    if (validate.name== false)
-    {
-      nameError.innerHTML="required";
-      return false;
-    }
-    else if(validate.email==false) {
-      emailError.innerHTML="*required";
+// function validateForm()
+// {
+//     if (validate.name== false)
+//     {
+//       nameError.innerHTML="required";
+//       return false;
+//     }
+//     else if(validate.email==false) {
+//       emailError.innerHTML="*required";
 
-    }
-    else if(validate.contact==false)
-    {
-      mobileError.innerHTML="*required";
-    }
-    else
-    {
-      return true;
-    }
-}
+//     }
+//     else if(validate.contact==false)
+//     {
+//       mobileError.innerHTML="*required";
+//     }
+//     else
+//     {
+//       return true;
+//     }
+// }
