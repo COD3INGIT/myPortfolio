@@ -200,28 +200,34 @@
             <h3 class="text-center" >Get In Touch</h3>
             <div class="form-group">
                 <label for="inputName"></label>
-                <input type="text"  name="name" id="inputName" class="form-control" required placeholder="Name" onkeyup="return validateName();" >                
+                <input type="text"  name="name" id="inputName" class="form-control"  placeholder="Name" autocomplete="off" onkeyup="return validateName();" >                
                 <p class="error-hint" id="name_Err"> </p>
             </div>
 
             <div class="form-group">
               <label for="inputEmail"></label>
-              <input   name="email"class="form-control " id="inputEmail" aria-describedby="emailHelp" required placeholder="Email" onkeyup="return validateEmail();" > 
+              <input   name="email"class="form-control " id="inputEmail" aria-describedby="emailHelp"  placeholder="Email" autocomplete="off"  onkeyup="return validateEmail();" > 
               <span class="error-hint" id="email_Err"> </span>
             </div>
             <div class="form-group">
                 <label for="inputContact"></label>
-                <input type="tel" name="contact" class="form-control" id="inputContact" required placeholder="Contact No." onkeyup="return validateContact();" >
+                <input type="tel" name="contact" class="form-control" id="inputContact" placeholder="Contact No." autocomplete="off" onkeyup="return validateContact();" >
                 <p class="error-hint" id="contact_Err"></p>
             </div>
               <div class="form-group">
                 <label for="commentInput"></label>
                 <textarea  class="form-control" name="message" id="commentInput" placeholder="Message" rows="4" cols="50" ></textarea>
               </div>
-            
-            
+            <div>
+                
+              <p class="error-hint" id="form_Err"></p>
+            </div>
+            <div>
             
             <input type="submit" class="btn btn-primary" style="width: 100%;"  > </input>
+
+           </div>
+            
           </form>
         </div>
         </div>
@@ -244,15 +250,20 @@
         </div>
     </footer>
   
-    <script src="script.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 
     <script>
+      
         $("#submit-form").submit((e)=>{
+
             e.preventDefault()
+            if(validName && validEmail)
+            {
             $.ajax({
                 url:"https://script.google.com/macros/s/AKfycbwYKSuESLW7pvjM1ecjqHSFRx0TF3bVM0t0tF3hpotXVfWqJPOrDqtIFLYMjSyA7qt4/exec",
                 data:$("#submit-form").serialize(),
@@ -267,6 +278,12 @@
     
                 }
             })
+        }
+        else{
+         
+          
+         alert("Please Fill details");
+        }
         })
     </script>
 </body>

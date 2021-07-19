@@ -1,60 +1,63 @@
-const validate={
-    name:false,
-    place:false,
-    email:false,
-    contact:false
-}
-  
+
+  var validName;
+  var validEmail;
+  var validContact;
+
 function validateName(){
+  
     var name=document.getElementById("inputName").value;
     var nameError=document.getElementById("name_Err");
     var nameRegx=/^[a-zA-Z]+(\s+[-a-zA-Z-()]+)*$/;
-
+    validName=false;
   if(name==null || name.length <1){
-    validate.name=false;
+    validName=false;
     nameError.innerHTML="*required";
   }else if(name.match(nameRegx)){
     nameError.innerHTML="";
-    validate.name=true;
+    validName=true;
   }else{
     nameError.innerHTML="*invalid";
-    validate.name=false;
+    validName=false;
   }
 
 }
 
 
 function validateEmail(){
+  validEmail=false
     var email=document.getElementById("inputEmail").value;
     var emailError=document.getElementById("email_Err");
     var emailRegx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if(email==null || email==""){
-    validate.email=false;
+    validEmail=false;
     emailError.innerHTML="*required";
   }else if(email.match(emailRegx)){
     emailError.innerHTML="";
-    validate.email=true;
+    validEmail=true;
   }else{
     emailError.innerHTML="*invalid";
-    validate.email=false;
+    validEmail=false;
   }
 }
 
 function validateContact(){
+  validContact=false;
     var contact=document.getElementById("inputContact").value;
-    var mobileError=document.getElementById("contact_Err");
+    var contactError=document.getElementById("contact_Err");
     var contactRegx=/^\d{10}$/
 
   if(contact==null || contact==""){
-    validate.contact=false;
-    mobileError.innerHTML="*required";
-  }else if(mobile.match(contactRegx)){
-    mobileError.innerHTML="";
-    validate.contact=true;
-  }else{
-    mobileError.innerHTML="*invalid";
-    validate.contact=false;
+    validContact=false;
+    contactError.innerHTML="*required";
+  }
+  else if(contact.match(contactRegx)){
+    contactError.innerHTML="";
+    validContact=true;
+  }else
+  {
+    contactError.innerHTML="*invalid";
+    validContact=false;
   }
 }
 // function validateForm()
