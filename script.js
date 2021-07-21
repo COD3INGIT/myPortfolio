@@ -1,82 +1,166 @@
 
-  var validName;
-  var validEmail;
-  var validContact;
+ 
+$(document).ready(function(){
+  let emailError=true;
+  let nameError=true;
+  let contactError=true;
 
-function validateName(){
-  
-    var name=document.getElementById("inputName").value;
-    var nameError=document.getElementById("name_Err");
-    var nameRegx=/^[a-zA-Z]+(\s+[-a-zA-Z-()]+)*$/;
-    validName=false;
-  if(name==null || name.length <1){
-    validName=false;
-    nameError.innerHTML="*required";
-  }else if(name.match(nameRegx)){
-    nameError.innerHTML="";
-    validName=true;
-  }else{
-    nameError.innerHTML="*invalid";
-    validName=false;
-  }
+  $('#email_Err').hide();
+  $("#inputEmail").keyup(function(){
+   validateEmail();
+  });
 
-}
+  $('#name_Err').hide();
+
+  $("#inputName").keyup(function(){
+    validateName();
+   });
+
+  $('#contact_Err').hide();
+
+    $("#inputContact").keyup(function(e){
+    var keyCode=e.which;
+    validateContact(keyCode);
+   });
 
 
-function validateEmail(){
-  validEmail=false
-    var email=document.getElementById("inputEmail").value;
-    var emailError=document.getElementById("email_Err");
-    var emailRegx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+function validateEmail()
+{
+  let email=$('#inputEmail').val();
+  var emailRegx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  if(email==null || email==""){
-    validEmail=false;
-    emailError.innerHTML="*required";
-  }else if(email.match(emailRegx)){
-    emailError.innerHTML="";
-    validEmail=true;
-  }else{
-    emailError.innerHTML="*invalid";
-    validEmail=false;
-  }
-}
-
-function validateContact(){
-  validContact=false;
-    var contact=document.getElementById("inputContact").value;
-    var contactError=document.getElementById("contact_Err");
-    var contactRegx=/^\d{10}$/
-
-  if(contact==null || contact==""){
-    validContact=false;
-    contactError.innerHTML="*required";
-  }
-  else if(contact.match(contactRegx)){
-    contactError.innerHTML="";
-    validContact=true;
-  }else
+  if(email==null || email=="")
   {
-    contactError.innerHTML="*invalid";
-    validContact=false;
+    $('#email_Err').show();
+    $('#email_Err').html("*email required");
+    $("#inputEmail").css("border", "1px solid red");
+    emailError=false;
+    return false;
+  }
+  else if(! email.match(emailRegx)){
+
+    $('#email_Err').show();
+    $('#email_Err').html("**enter valid email");
+    $("#inputEmail").css("border", "1px solid red");
+    emailError=false;
+    return false;
+
+    
+  }
+  else{
+    $('#email_Err').hide();
+    $("#inputEmail").css("border","1px solid #ced4da");
+    emailError=true;
+   return true;
+
+  }
+
+}
+function validateName()
+{
+  let name=$('#inputName').val();
+  let strName=name.charAt(0);
+  var nameRegx=/[a-zA-Z]+(\s+[-a-zA-Z-()]+)*$/;
+ // var nameRegx=/^[a-zA-Z ]{2,30}$/;
+
+  if(name==null || name=="")
+  {
+    $('#name_Err').show();
+    $('#name_Err').html("*name required");
+    $("#inputName").css("border", "1px solid red");
+    nameError=false;
+    return false;
+  }
+   
+  if(! name.match(nameRegx)){
+
+    $('#name_Err').show();
+    $('#name_Err').html("**only alphabets allowed");
+    $("#inputName").css("border", "1px solid red");
+    nameError=false;
+    return false;
+
+    
+  }
+  else{
+    $('#name_Err').hide();
+    nameError=true;
+    $("#inputName").css("border","1px solid #ced4da");
+   return true;
+
   }
 }
-// function validateForm()
-// {
-//     if (validate.name== false)
-//     {
-//       nameError.innerHTML="required";
-//       return false;
-//     }
-//     else if(validate.email==false) {
-//       emailError.innerHTML="*required";
 
-//     }
-//     else if(validate.contact==false)
-//     {
-//       mobileError.innerHTML="*required";
-//     }
-//     else
-//     {
-//       return true;
-//     }
-// }
+function validateContact(keyCode)
+{
+
+  let contact=$('#inputContact').val();
+  var contactRegx=/^\d{10}$/
+  if(contact==null || contact =='')
+  {
+    $('#contact_Err').show();
+    $('#contact_Err').html("*contact no: required");
+    $("#inputContact").css("border", "1px solid red");
+    contactError=false;
+    return false;
+  }
+
+  else if((keyCode != 8 || keyCode ==32 ) && (keyCode < 48 || keyCode > 57))
+  {
+    
+      $('#contact_Err').show();
+      $('#contact_Err').html("**Only numbers allowed ");
+      $('#inputContact').val($('#inputContact').val().replace(/[^0-9]/g, ''))
+      $("#inputContact").css("border", "1px solid red");
+    contactError=false;
+      return false;
+    
+  }
+  else if(contact.length <10)
+  {
+     $('#contact_Err').show();
+      $('#contact_Err').html("**Conatct no: should be 10 digits");
+         $("#inputContact").css("border", "1px solid red");
+      contactError=false;
+      return false;
+  }
+  
+  else{
+
+
+    if(contact.length > 10)
+    {
+      $('#contact_Err').show();
+      $('#contact_Err').html("**Contact no: should not exceed 10 digits");
+      $("#inputContact").css("border", "1px solid red");
+      contactError=false;
+      return false;
+    }
+    else{
+    $('#contact_Err').hide();
+    contactError=true;
+    $("#inputContact").css("border","1px solid #ced4da");
+   return true;
+    }
+
+  }
+}
+$('#submit_btn').click(function () {
+  validateName();
+  validateEmail();
+  validateContact();
+  if ((nameError == true) &&
+      (emailError == true) &&  
+      (contactError == true)) {
+      return true;
+  } else {
+      alert("Please fill the details")
+      return false;
+  }
+});
+
+
+});
+
+
+

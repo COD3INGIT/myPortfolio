@@ -69,9 +69,9 @@
                     </div>
                     <p class="pt-2 text-muted" >I'm a web developer based out of Kochi, specialising in designing and building high scalable web apps. </p>
                     <div class="social_container pt-5">
-                    <a href="https://github.com/COD3INGIT"><i class="fa fa-github pr-5" style="font-size:36px"></i></a>
-                    <a href="https://www.linkedin.com/in/arjun-k-s-68233b18b/"><i class="fa fa-linkedin pr-5" style="font-size:36px"></i></a>
-                   <a href="https://www.instagram.com/"><i class="fa fa-instagram pr-5" style="font-size:36px"></i></a>
+                    <a href="https://github.com/COD3INGIT" target="_blank"><i class="fa fa-github pr-5" style="font-size:36px"></i></a>
+                    <a href="https://www.linkedin.com/in/arjun-k-s-68233b18b/" target="_blank"><i class="fa fa-linkedin pr-5" style="font-size:36px"></i></a>
+                   <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram pr-5" style="font-size:36px"></i></a>
                     </div>
                 </div>                      
             </div>
@@ -196,22 +196,22 @@
         <div class="row">
 
             <div class="col ">
-        <form name=submit-form  id="submit-form" action="">
+        <form name=submit-form  id="submit-form"  action="">
             <h3 class="text-center" >Get In Touch</h3>
-            <div class="form-group">
+            <div class="form-group ">
                 <label for="inputName"></label>
-                <input type="text"  name="name" id="inputName" class="form-control"  placeholder="Name" autocomplete="off" onkeyup="return validateName();" >                
+                <input type="text"  name="name" id="inputName" class="form-control"  placeholder="Name" autocomplete="off" >                
                 <p class="error-hint" id="name_Err"> </p>
             </div>
 
             <div class="form-group">
               <label for="inputEmail"></label>
-              <input   name="email"class="form-control " id="inputEmail" aria-describedby="emailHelp"  placeholder="Email" autocomplete="off"  onkeyup="return validateEmail();" > 
+              <input   name="email"class="form-control " id="inputEmail" aria-describedby="emailHelp"  placeholder="Email" autocomplete="off"  > 
               <span class="error-hint" id="email_Err"> </span>
             </div>
             <div class="form-group">
                 <label for="inputContact"></label>
-                <input type="tel" name="contact" class="form-control" id="inputContact" placeholder="Contact No." autocomplete="off" onkeyup="return validateContact();" >
+                <input type="tel" name="contact" class="form-control" id="inputContact" placeholder="Contact No." autocomplete="off"  >
                 <p class="error-hint" id="contact_Err"></p>
             </div>
               <div class="form-group">
@@ -224,7 +224,7 @@
             </div>
             <div>
             
-            <input type="submit" class="btn btn-primary" style="width: 100%;"  > </input>
+            <input type="submit" id="submit_btn"class="btn btn-primary" style="width: 100%;"  > </input>
 
            </div>
             
@@ -239,9 +239,9 @@
         <div class="row">
             <div class=" footer_social col-12 text-center pt-1">
               
-                <a href="https://github.com/COD3INGIT"><i class="fa fa-github " style="font-size:20px"></i></a>
-                <a href="https://www.linkedin.com/in/arjun-k-s-68233b18b/"><i class="fa fa-linkedin px-4 " style="font-size:20px"></i></a>
-               <a href="https://www.instagram.com/"><i class="fa fa-instagram " style="font-size:20px"></i></a>
+                <a href="https://github.com/COD3INGIT" target="_blank"><i class="fa fa-github " style="font-size:20px"></i></a>
+                <a href="https://www.linkedin.com/in/arjun-k-s-68233b18b/"target="_blank"><i class="fa fa-linkedin px-4 " style="font-size:20px"></i></a>
+               <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram " style="font-size:20px"></i></a>
             
             </div>
             <div class="col-12 pt-1">
@@ -262,8 +262,8 @@
         $("#submit-form").submit((e)=>{
 
             e.preventDefault()
-            if(validName && validEmail)
-            {
+            //if(validName && validEmail)
+            //{
             $.ajax({
                 url:"https://script.google.com/macros/s/AKfycbwYKSuESLW7pvjM1ecjqHSFRx0TF3bVM0t0tF3hpotXVfWqJPOrDqtIFLYMjSyA7qt4/exec",
                 data:$("#submit-form").serialize(),
@@ -278,12 +278,12 @@
     
                 }
             })
-        }
-        else{
+        //}
+        // else{
          
           
-         alert("Please Fill details");
-        }
+        //  alert("Please Fill details");
+        // }
         })
     </script>
 </body>
