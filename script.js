@@ -105,7 +105,8 @@ function validateContact(keyCode)
     return false;
   }
 
-  else if((keyCode != 8 || keyCode ==32 ) && (keyCode < 48 || keyCode > 57))
+  else if((keyCode != 8 || keyCode ==32 ) && (keyCode < 48 || keyCode > 57) && (keyCode != 46 && keyCode > 31 ) && (keyCode < 96 || keyCode > 105 ))
+  
   {
     
       $('#contact_Err').show();
